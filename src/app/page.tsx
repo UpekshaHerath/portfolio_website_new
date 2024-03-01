@@ -73,6 +73,12 @@ export default function Home() {
         <h2 className="text-3xl font-bold">Technologies</h2>
         <StickyScroll content={content} />
       </div>
+
+      { /* Education */ }
+      <div className="p-10">
+        <h2 className="text-3xl font-bold">Education</h2>
+        <p>University of Moratuwa</p>
+      </div>
     </>
   );
 }
