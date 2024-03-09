@@ -6,6 +6,7 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { ThemeSwitcher } from "@/components/theme/ThemeSwitcher";
 import { MacbookScroll } from "@/components/ui/macbook-scroll";
 import Link from "next/link";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 const content = [
   {
@@ -59,11 +60,12 @@ const content = [
 export default function Home() {
   return (
     <>
-      <div className="h-100">
-        <ThemeSwitcher />
-      </div>
-      { /* landing page */ }
-      {/* <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+      
+        <div className="h-100">
+          <ThemeSwitcher />
+        </div>
+        {/* landing page */}
+        <div className="h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
         <div className="absolute inset-0 w-full h-full bg-slate-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
         <Boxes />
         <h1 className={cn("md:text-4xl text-xl text-white relative z-20")}>
@@ -72,33 +74,40 @@ export default function Home() {
         <p className="text-center mt-2 text-neutral-300 relative z-20">
           Information Technology Undergraduate
         </p>
-      </div> */}
-
-      <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
-        <MacbookScroll
-          title={
-            <span>
-              Hi there, I'm <br />
-              <span className="text-[#FF3E00]">Upeksha Herath</span><br />
-              <span className="text-[#FF3E00]">A graduate who is looking for an Software Job</span><br />
-              <span className="text-[#FF3E00]">Interested in;</span><br />
-              <span className="text-[#FF3E00]">Web developer</span><br />
-            </span>
-          }
-          badge={
-            <Link href="https://peerlist.io/manuarora">
-              <Badge className="h-10 w-10 transform -rotate-12" />
-            </Link>
-          }
-          src={`/linear.webp`}
-          showGradient={false}
-        />
       </div>
-      { /* technologies */ }
-      <div className="p-10">
-        <h2 className="text-3xl font-bold">Technologies</h2>
-        <StickyScroll content={content} />
-      </div>
+      <TracingBeam className="px-6">
+        <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
+          <MacbookScroll
+            title={
+              <span>
+                Hi there, I'm <br />
+                <span className="text-[#FF3E00]">Upeksha Herath</span>
+                <br />
+                <span className="text-[#FF3E00]">
+                  A graduate who is looking for an Software Job
+                </span>
+                <br />
+                <span className="text-[#FF3E00]">Interested in;</span>
+                <br />
+                <span className="text-[#FF3E00]">Web developer</span>
+                <br />
+              </span>
+            }
+            badge={
+              <Link href="https://peerlist.io/manuarora">
+                <Badge className="h-10 w-10 transform -rotate-12" />
+              </Link>
+            }
+            src={`/linear.webp`}
+            showGradient={false}
+          />
+        </div>
+        {/* technologies */}
+        <div className="p-10">
+          <h2 className="text-3xl font-bold">Technologies</h2>
+          <StickyScroll content={content} />
+        </div>
+      </TracingBeam>
     </>
   );
 }
